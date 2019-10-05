@@ -4,8 +4,8 @@
 		while ( have_posts() ) :
 			the_post();
 			get_template_part( 'content-single', get_post_format() );			
-		endwhile; ?>
-	
+		endwhile; 
+		?>
 </div>
 	<div class="previous"><?php previous_post_link(); ?></div>
 	<div class="next"><?php next_post_link(); ?></div>

@@ -1,5 +1,5 @@
 <div class="about_column" id="about_column2">
-				<img src="<?php the_post_thumbnail('full', 'style=width:100%;height:auto'); ?>" class="about_image">
+				<img src="<?php the_post_thumbnail('full', 'style=width: 100%; height: 100%'); ?>" class="about_image">
 			</div>
 			
 				<div class="about_column" id="about_column1">

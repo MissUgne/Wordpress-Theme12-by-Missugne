@@ -1,8 +1,11 @@
-<div class="banner">
-	<img src="<?php the_post_thumbnail('full', 'style=width:100%;height:auto'); ?>" class="banner_image">
-<h1 class="banner_title"><?php the_title(); ?></h1>
+<div class="container">
+	<div class="banner" id="page_banner">
+	<div class="post_title" id="page_banner_title">
+		<?php the_title(); ?>
+	</div>
+	</div>
 </div>
 			
-<div class="page_text">
+<div class="post_text">
 <?php the_content(); ?>
 </div>

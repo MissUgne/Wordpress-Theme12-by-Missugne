@@ -16,13 +16,17 @@ Tags: wordpress theme
     position: fixed;
     top: 0;
     left: 0;
+	height: 50px;
     width: 100%;
     padding: 0;
 	z-index: 10000;
     transition: all 0.2s ease-in-out;
-    background-color: transparent;  
-    
+	background: #0A2A22 linear-gradient(rgba(0, 0, 0, 0.3),rgba(0,0,0,0.4));
 	text-align: right;
+   /* background-color: #0A2A22;
+	background-color: rgb(0,0,0); /* Fallback color 
+  	background-color: rgba(0,0,0, 0.4);  Black w/opacity/see-through  */
+	
 }
 
 .header a {
@@ -39,12 +43,6 @@ Tags: wordpress theme
 
 header ul {
 	list-style-type: none;
-	/* Header for admin bar */
-	padding-top: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-bottom: 0px;
-	margin-top: 20px;
 }
 
 header li {
@@ -84,7 +82,7 @@ section ul {
 }
 
 #main_page {
-    background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(250,240,240,0.3)), url(http://10.0.1.32/wp-content/uploads/2019/09/intro_background.jpg) no-repeat center center fixed; 
+    background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(250,240,240,0.3)), url(https://10.0.2.103/wp-content/uploads/2019/09/intro_background.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -105,7 +103,6 @@ section ul {
 
 .intro_text {
 	margin-left: 50px;
-	margin-right: 380px;
 	bottom: 100px;
 	position: absolute;
 	color: #F2F2F2;
@@ -121,19 +118,6 @@ section ul {
 	text-align: center;
 }
 
-.facts {
-	background-color: #E6E6E6;
-	height: 50vh;
-	margin-top: 50px;
-	margin-left: 50px;
-	margin-right: 50px;
-	overflow: hidden;
-	
-	text-align: center;
-	font-size: 18px;
-	font-family: Times;
-}
-
 /* FACTS */
 .facts {
 	background-color: #E6E6E6;
@@ -145,13 +129,12 @@ section ul {
 	
 	text-align: center;
 	font-size: 18px;
-	font-family: Times;
 }
 
 .facts_column {
 	float: left;
 	width: 50%;
-	height: 50vh;
+	min-height: 50vh;
 	overflow: hidden;
 }
 
@@ -159,21 +142,30 @@ section ul {
 	background: white;
 	margin: 0px;
 	padding: 0px;
-	position: relative;
 }
 
 .facts_image {
-	object-fit: cover;
 	width: 100%;
-	height: 100%;
+	max-height: 50vh;
+	object-fit: cover;
 }
 
 .facts_info {
-    position: absolute;
     top: 50%;
 	left: 50%;
-	margin-bottom: 30px;
     transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 800px) {
+  .facts_column {
+    min-height: none;
+  }
+  .facts_column {
+	  width: 100%;
+  }
+  .facts {
+	  height: none;
+  }
 }
 
 
@@ -185,15 +177,18 @@ section ul {
 }
 
 .main_blog {
-	height: 160vh;
 	overflow: hidden;
-	margin: 50px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 .column {
-	height: 560px;
+	/*height: 560px;*/
   	float: left;
-  	width: 30%;
+  	-ms-flex: 30%;
+	flex: 30%;
+	max-width: 30%;
   	margin: 10px;
   	padding: 7px;
   	background: white;
@@ -203,7 +198,7 @@ section ul {
 	width: 100%;
 	color: gray;
 	text-align: justify;
-	line-height: 1.5em;
+	/*line-height: 1.5em;*/
 }
 
 .row {
@@ -217,11 +212,10 @@ section ul {
 
 .blog_image {
 	width: 100%;
-	height: auto;
 	display: block;
 	margin-bottom: 10px;
 	position: relative;
-	text-align: center;
+	vertical-align: middle;
 }
 
 .title a {
@@ -230,11 +224,25 @@ section ul {
 	font-size: 25px;
 }
 
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
 
 /* POST */
-
 .post_page {
-	margin-top: 0px;
+	margin-top: 100px;
 }
 
 .post_text {
@@ -252,7 +260,9 @@ section ul {
 
 .post_image {
 	position: relative;
-	text-align: center;
+	/text-align: center;
+	width: 100%;
+	vertical-align: middle;
 }
 
 .post_title {
@@ -293,23 +303,9 @@ section ul {
 }
 
 /* PAGE */
-.page {
-	background-color: white;
-	margin: 0px;
-	height: 100%;
-}
 
-.page_text {
-	color: gray;
-	margin-left: 77px;
-	margin-right: 77px;
-	margin-bottom: 30px;
-	margin-top: 20px;
-	text-align: left;
-	line-height: 1.5em;
-}
 
- /* BANNER */
+/* BANNER */
 .banner {
 	height: 30vh;
 	margin: 0px;
@@ -326,7 +322,7 @@ section ul {
 	font-family: Georgia;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: fill;
 }
 
 .banner_title {
@@ -353,13 +349,19 @@ section ul {
 	color: #8B0000;
 }
 
+#page_banner {
+	background: #0A2A22 linear-gradient(rgba(0, 0, 0, 0.3),rgba(0,0,0,0.4));
+	height: 50vh;
+}
+
 
 /* ABOUT */
 .about {
 	background-color: #E6E6E6;
-	height: 100vh;
-	margin: 50px;
-	
+	margin-top: 100px;
+	margin-bottom: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
 	text-color: #F79F81;
 	text-align: center;
 	font-size: 18px;
@@ -370,30 +372,42 @@ section ul {
 	float: left;
 	width: 50%;
 	height: 100vh;
+	margin: 0px;
+	padding: 0px;
 	overflow: hidden;
 }
 
 #about_column1 {
 	background: white;
-	margin: 0px;
-	padding: 0px;
 	position: relative;
 }
 
 .about_image {
 	object-fit: cover;
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
 .about_info {
     position: absolute;
+	text-align: center;
     top: 50%;
 	left: 50%;
-	margin-bottom: 30px;
     transform: translate(-50%, -50%);
+	font-size: 16px;
 }
 
+@media screen and (max-width: 900px) {
+  .about_info {
+	  font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about_info {
+	  font-size: 12px;
+  }
+}
 
 /* FOOTER */
 footer {
@@ -405,9 +419,13 @@ footer {
 #contact {
 	background: #0A2A22 linear-gradient(rgba(0, 0, 0, 0.3),rgba(0,0,0,0.1));
 	font-size: 15px;
-	height: 40vh;
+	height: 35vh;
 	overflow: hidden;
 	text-align: center;
+}
+
+.contacts_column {
+	margin-top: 50px;
 }
 
 #contact ul {
@@ -433,8 +451,8 @@ footer {
 
 .subscribe_input {
     padding: 0 16px;
-    width: 30%;
-    height: 35px;
+    width: 20%;
+    height: 30px;
     font-size: 15px;
 	font-family: Georgia;
     color: #444;
@@ -446,7 +464,7 @@ footer {
 
 .subscribe_submit {
 	padding: 0 16px;
-	height: 35px;
+	height: 30px;
 	font-size: 15px;
 	font-family: Georgia;
 	color: #8B0000;
@@ -471,4 +489,3 @@ footer {
 	color: #666;
 	font-size: 15px;
 }
-

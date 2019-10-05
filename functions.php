@@ -13,6 +13,7 @@ add_theme_support( 'title-tag' );
 
 add_image_size( 'home-thumbnail', 380, 380 );
 add_image_size( 'blog-thumbnail', 600, 600 );
+add_image_size( 'page-thumbnail', 600, 1200 );
 add_image_size( 'post-thumbnail', 1200, 1200 );
 
 add_custom_background();
