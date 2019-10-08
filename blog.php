@@ -6,7 +6,7 @@
 		
 	<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-<div class="column">
+<div class="column" id="main_blog_column">
 <div class="blog_image"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('full', 'style=width:100%;height:auto'); ?></a>
 </div>
 <div class="title"><?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>

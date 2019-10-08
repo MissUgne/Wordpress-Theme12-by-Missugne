@@ -15,7 +15,7 @@ Template Name: Front Page
 	<?php get_template_part( 'facts' ); ?>
 </section>
 			
-<section id="blog" class="row">
+<section class="blog">
 	<?php get_template_part( 'frontblog' ); ?>
 </section>
 		
